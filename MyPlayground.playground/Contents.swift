@@ -35,6 +35,17 @@ class Manager: Employee {
     
 }
 
+
+/*
+ 
+static is nothing but class final.
+class functions are dynamically dispatched.
+static and final functions can not be overidden.
+final classes can not be overrided.
+ 
+*/
+
+
 let emp1 = Employee()
 emp1.junk()
 
