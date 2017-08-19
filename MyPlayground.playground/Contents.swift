@@ -1,69 +1,35 @@
 //: Playground - noun: a place where people can play
 
-/*
- 
- https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID166
- 
- */
-
-import UIKit
-
-/***** Function Parameters ****/
+import Foundation
 
 
-// Default Parameter Values
-
-func incrementSalary(_ salary: Int, by increment: Int = 100, for months: Int = 1) -> Int{
-    return salary + increment * months
-}
-
-incrementSalary(10000)
-
-// Variadic Parameters
-
-func arithmeticMean(_ numbers: Double...) -> Double {
+class Employee {
     
-    if numbers.count == 0 {
+    class func workFromHomeHoursPerMonth() -> Int {
+        return 10
+    }
+    
+    static func fuelPerMonth() -> Int {
         return 0
     }
-    var total: Double = 0
-    for number in numbers {
-        total += number
+    
+}
+
+class Manager: Employee {
+    
+    override class func workFromHomeHoursPerMonth() -> Int {
+        return 20
     }
-    return total / Double(numbers.count)
+    
 }
 
-arithmeticMean()
+let emp1 = Employee()
 
-// In-Out Parameters
+Employee.workFromHomeHoursPerMonth()
 
-func swapTwoInts(_ a: inout Int, _ b: inout Int) {
-    let temporaryA = a
-    a = b
-    b = temporaryA
-}
+Employee.fuelPerMonth()
 
-var a = 100
-var b = 200
-
-a
-b
-
-swapTwoInts(&a, &b)
-
-a
-b
-
-
-
-
-
-
-
-
-
-
-
+Manager.workFromHomeHoursPerMonth()
 
 
 
